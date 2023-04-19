@@ -1,0 +1,410 @@
+{% extends 'header.html' %}
+{% block content %}
+
+        <!-- main-area -->
+        <main>
+
+            <!-- breadcrumb-area -->
+            <div class="breadcrumb-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="breadcrumb-wrap">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{{ '/' }}">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Shop Details</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- breadcrumb-area-end -->
+
+            <!-- shop-details-area -->
+            <div class="shop-details-area shop-inner-page pt-100 pb-95">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-3 order-2 order-lg-0">
+                            <aside class="shop-sidebar">
+                                <div class="widget">
+                                    <div class="sidebar-search">
+                                        <form action="#">
+                                            <input type="text" placeholder="Search ...">
+                                            <button type="submit"><i class="fa fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="widget">
+                                    <h4 class="sidebar-title">Category</h4>
+                                    <div class="shop-cat-list">
+                                        <ul>
+                                            <li><a href="shop.html">Medication <span>+</span></a></li>
+                                            <li><a href="shop.html">Disposable <span>+</span></a></li>
+                                            <li><a href="shop.html">PPE-Kit <span>+</span></a></li>
+                                            <li><a href="shop.html">Face-Mask <span>+</span></a></li>
+                                            <li><a href="shop.html">Safety-Suits <span>+</span></a></li>
+                                            <li><a href="shop.html">Eye-Protect <span>+</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="widget">
+                                    <h4 class="sidebar-title">Top Brand</h4>
+                                    <div class="shop-brand-list">
+                                        <ul>
+                                            <li><a href="shop.html">Medication</a></li>
+                                            <li><a href="shop.html">Carnation</a></li>
+                                            <li><a href="shop.html">Suppke</a></li>
+                                            <li><a href="shop.html">WeBeyond</a></li>
+                                            <li><a href="shop.html">Edstudy</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="widget">
+                                    <h4 class="sidebar-title">Filter by Price</h4>
+                                    <div class="price_filter">
+                                        <div id="slider-range"></div>
+                                        <div class="price_slider_amount">
+                                            <span>Price :</span>
+                                            <input type="text" id="amount" name="price" placeholder="Add Your Price" />
+                                            <input type="submit" class="btn" value="Filter">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget shop-widget-banner">
+                                    <a href="shop.html"><img src="img/products/shop_add.jpg" alt=""></a>
+                                </div>
+                            </aside>
+                        </div>
+                        <div class="col-9">
+                            <div class="shop-details-wrap">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="shop-details-img-wrap">
+                                            <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane show active" id="item-one" role="tabpanel" aria-labelledby="item-one-tab">
+                                                    <div class="shop-details-img">
+                                                        <img src="{{ url_for('static', filename='img/products/shop_details01.jpg') }}" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" id="item-two" role="tabpanel" aria-labelledby="item-two-tab">
+                                                    <div class="shop-details-img">
+                                                        <img src="{{ url_for('static', filename='img/products/shop_details02.jpg') }}" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" id="item-three" role="tabpanel" aria-labelledby="item-three-tab">
+                                                    <div class="shop-details-img">
+                                                        <img src="{{ url_for('static', filename='img/products/shop_details03.jpg') }}" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shop-details-nav-wrap">
+                                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link active" id="item-one-tab" data-toggle="tab" href="#item-one" role="tab" aria-controls="item-one" aria-selected="true"><img src="img/products/shop_nav_img01.jpg" alt=""></a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" id="item-two-tab" data-toggle="tab" href="#item-two" role="tab" aria-controls="item-two" aria-selected="false"><img src="img/products/shop_nav_img02.jpg" alt=""></a>
+                                                </li>
+                                                <li class="nav-item" role="presentation">
+                                                    <a class="nav-link" id="item-three-tab" data-toggle="tab" href="#item-three" role="tab" aria-controls="item-three" aria-selected="false"><img src="img/products/shop_nav_img03.jpg" alt=""></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="shop-details-content">
+                                            <span>hand sanitizer</span>
+                                            <h2 class="title">{{Product_details[1]}}</h2>
+                                            <div class="shop-details-review">
+                                                <div class="rating">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
+                                                <span>( 01 Review )</span>
+                                            </div>
+                                            <div class="shop-details-price">
+                                                <h2 class="price">$52.00</h2>
+                                                <h5 class="stock-status">- IN Stock</h5>
+                                            </div>
+                                            <p>Most Chemist stores sell various types of medical supplies and numerous kinds of Allopathic, Homeopathic and ayurvedic medicines. They also sell vitamins vaccines.</p>
+                                            <div class="shop-details-dimension">
+                                                <span>Dimension :</span>
+                                                <ul>
+                                                    <li class="active"><a href="#">Large</a></li>
+                                                    <li><a href="#">Medium</a></li>
+                                                    <li><a href="#">Small</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="shop-details-color">
+                                                <span>Color :</span>
+                                                <ul>
+                                                    <li class="active"></li>
+                                                    <li class="black"></li>
+                                                    <li class="green"></li>
+                                                    <li class="blue"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="shop-details-quantity">
+                                                <form action="#" method="post">
+                                                <span>Quantity :</span>
+                                                <div class="cart-plus-minus">
+                                                    <input type="text" name="productQty" value="1">
+                                                </div>
+                                                <a href="shop-detail" class="wishlist-btn"><i class="fas fa-heart"></i> Add to Wishlist</a>
+                                                <button type="submit" class="cart-btn">Add to Cart +</button>
+                                                </form>
+                                            </div>
+                                            <div class="shop-details-bottom">
+                                                <ul>
+                                                    <li class="sd-category">
+                                                        <span class="title">Categories :</span>
+                                                        <a href="shop.html">Hand,</a>
+                                                        <a href="shop.html">Sanitizer,</a>
+                                                        <a href="shop.html">Covid - 19</a>
+                                                    </li>
+                                                    <li class="sd-sku">
+                                                        <span class="title">SKU :</span>
+                                                        <a href="shop.html">H#21546</a>
+                                                    </li>
+                                                    <li class="sd-share">
+                                                        <span class="title">Share Now :</span>
+                                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-desc-wrap">
+                                    <ul class="nav nav-tabs" id="myTabTwo" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="true">Details More</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="val-tab" data-toggle="tab" href="#val" role="tab" aria-controls="val" aria-selected="false">Information</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContentTwo">
+                                        <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
+                                            <div class="product-desc-content">
+                                                <p>Most Chemist stores sell various types of medical supplies and numerous kinds of Allopathic, Homeopathic and ayurvedic medicines. They also sell vitamins, vaccines This is an online generator which converts normal text letters into tiny letters which you can copy and paste into facebook, twitter, instagram and other social media posts and status updates. It essentially allows you to make text smaller. The text looks so small because three special unicode alphabets are used. This is why you can copy and paste</p>
+                                                <p>Which you can copy and paste into facebook, twitter, instagram and other social media posts and status updates. It essentially allows you to make text smaller. The text looks so small because three special unicode alphabets are used. This is why you can copy and paste.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="val" role="tabpanel" aria-labelledby="val-tab">
+                                            <div class="product-desc-info">
+                                                <div class="row">
+                                                    <div class="col-xl-4 col-md-5">
+                                                        <div class="product-desc-img">
+                                                            <img src="{{ url_for('static', filename='img/products/desc_img.jpg') }}" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-8 col-md-7">
+                                                        <h5 class="small-title">Axiom</h5>
+                                                        <p>Cramond Leopard & Pythong Print Anorak Jacket In Beige but also the leap into electronic typesetting, remaining lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                                        <ul class="product-desc-list">
+                                                            <li>65% poly, 35% rayon</li>
+                                                            <li>Partially lined</li>
+                                                            <li>Hidden front button closure with keyhole accents</li>
+                                                            <li>Button cuff sleeves</li>
+                                                            <li>Lightweight semi-sheer fabrication</li>
+                                                            <li>Made in USA</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                                            <div class="product-desc-review">
+                                                <div class="review-title mb-20">
+                                                    <h4 class="title">Customer Reviews (0)</h4>
+                                                </div>
+                                                <div class="left-rc">
+                                                    <p>No reviews yet</p>
+                                                </div>
+                                                <div class="right-rc">
+                                                    <a href="#">Write a review</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="related-products-wrap shop-wrap">
+                                    <h4 class="title">Related Products</h4>
+                                    <div class="row related-product-active">
+                                        <div class="col">
+                                            <div class="shop-item">
+                                                <div class="shop-thumb">
+                                                    <a href="shop-details.html"><img src="{{ url_for('static', filename='img/products/shop_img01.jpg' )}}" alt=""></a>
+                                                </div>
+                                                <div class="shop-content">
+                                                    <span class="cat">Sanitizers</span>
+                                                    <h5 class="title"><a href="shop-details.html">Axiom Karela Jamun Juice</a></h5>
+                                                    <div class="shop-item-rating">
+                                                        <span class="avg-rating"> 3.2 <i class="far fa-star"></i></span>
+                                                        <span class="total-rating">349 Ratings</span>
+                                                    </div>
+                                                    <p class="shop-discount">MRP <del>$300</del> <span class="discount-off">6% OFF</span></p>
+                                                    <div class="shop-bottom">
+                                                        <ul>
+                                                            <li class="price">$97.00</li>
+                                                            <li class="add"><a href="shop-details.html">ADD +</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="shop-item">
+                                                <div class="shop-thumb">
+                                                    <a href="shop-details.html"><img src="{{ url_for('static', filename='img/products/shop_img02.jpg') }}" alt=""></a>
+                                                </div>
+                                                <div class="shop-content">
+                                                    <span class="cat">Juice</span>
+                                                    <h5 class="title"><a href="shop-details.html">Episoft AC Sunscreen Cream</a></h5>
+                                                    <div class="shop-item-rating">
+                                                        <span class="avg-rating"> 4.5 <i class="far fa-star"></i></span>
+                                                        <span class="total-rating">349 Ratings</span>
+                                                    </div>
+                                                    <p class="shop-discount">MRP <del>$300</del> <span class="discount-off">6% OFF</span></p>
+                                                    <div class="shop-bottom">
+                                                        <ul>
+                                                            <li class="price">$370.00</li>
+                                                            <li class="add"><a href="shop-details.html">ADD +</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="shop-item">
+                                                <div class="shop-thumb">
+                                                    <a href="shop-details.html"><img src="{{ url_for('static', filename='img/products/shop_img03.jpg') }}" alt=""></a>
+                                                </div>
+                                                <div class="shop-content">
+                                                    <span class="cat">Microscope</span>
+                                                    <h5 class="title"><a href="shop-details.html">Glucon-D Instant Energy</a></h5>
+                                                    <div class="shop-item-rating">
+                                                        <span class="avg-rating"> 4.5 <i class="far fa-star"></i></span>
+                                                        <span class="total-rating">349 Ratings</span>
+                                                    </div>
+                                                    <p class="shop-discount">MRP <del>$300</del> <span class="discount-off">6% OFF</span></p>
+                                                    <div class="shop-bottom">
+                                                        <ul>
+                                                            <li class="price">$280.00</li>
+                                                            <li class="add"><a href="shop-details.html">ADD +</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="shop-item">
+                                                <div class="shop-thumb">
+                                                    <a href="shop-details.html"><img src="{{ url_for('static', filename='img/products/shop_img04.jpg') }}" alt=""></a>
+                                                </div>
+                                                <div class="shop-content">
+                                                    <span class="cat">Mask</span>
+                                                    <h5 class="title"><a href="shop-details.html">Axiom Karela Jamun Juice</a></h5>
+                                                    <div class="shop-item-rating">
+                                                        <span class="avg-rating"> 4.5 <i class="far fa-star"></i></span>
+                                                        <span class="total-rating">349 Ratings</span>
+                                                    </div>
+                                                    <p class="shop-discount">MRP <del>$300</del> <span class="discount-off">6% OFF</span></p>
+                                                    <div class="shop-bottom">
+                                                        <ul>
+                                                            <li class="price">$190.00</li>
+                                                            <li class="add"><a href="shop-details.html">ADD +</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="shop-item">
+                                                <div class="shop-thumb">
+                                                    <a href="shop-details.html"><img src="{{ url_for('static', filename='img/products/shop_img07.jpg') }}" alt=""></a>
+                                                </div>
+                                                <div class="shop-content">
+                                                    <span class="cat">Juice</span>
+                                                    <h5 class="title"><a href="shop-details.html">Episoft AC Sunscreen Cream</a></h5>
+                                                    <div class="shop-item-rating">
+                                                        <span class="avg-rating"> 4.5 <i class="far fa-star"></i></span>
+                                                        <span class="total-rating">349 Ratings</span>
+                                                    </div>
+                                                    <p class="shop-discount">MRP <del>$300</del> <span class="discount-off">6% OFF</span></p>
+                                                    <div class="shop-bottom">
+                                                        <ul>
+                                                            <li class="price">$370.00</li>
+                                                            <li class="add"><a href="shop-details.html">ADD +</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- shop-details-area-end -->
+
+            <!-- core-features-area -->
+            <section class="core-features-area">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="core-features-item mb-30">
+                                <div class="core-features-icon">
+                                    <img src="{{ url_for('static', filename='img/icon/delivery.png') }}" alt="">
+                                </div>
+                                <div class="core-features-content">
+                                    <h4 class="title">Home Delivery</h4>
+                                    <p>Product Delivery is a customer-centric approach to defining.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="core-features-item mb-30">
+                                <div class="core-features-icon">
+                                    <img src="{{ url_for('static', filename='img/icon/return.png') }}" alt="">
+                                </div>
+                                <div class="core-features-content">
+                                    <h4 class="title">Click and Pick</h4>
+                                    <p>Product Delivery is a customer-centric approach to defining.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="core-features-item mb-30">
+                                <div class="core-features-icon">
+                                    <img src="{{ url_for('static', filename='img/icon/headphone.png') }}" alt="">
+                                </div>
+                                <div class="core-features-content">
+                                    <h4 class="title">Quality Support</h4>
+                                    <p>Product Delivery is a customer-centric approach to defining.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- core-features-area-end -->
+
+        </main>
+        <!-- main-area-end -->
+{% endblock %}
